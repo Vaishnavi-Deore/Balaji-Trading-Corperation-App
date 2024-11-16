@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Product Image -->
+
+        <!-- Size Options -->
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pipes" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="8dp">
+
+            <Button
+                android:id="@+id/size7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7 UK" />
+
+            <Button
+                android:id="@+id/size8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8 UK" />
+            <Button
+                android:id="@+id/size9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9 UK" />
+            <Button
+                android:id="@+id/size10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 UK" />
+        </LinearLayout>
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pipes"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <!-- Price and Discount -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/discountedPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹2000"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:paddingStart="8dp" />
+        </LinearLayout>
+
+        <!-- Product Details -->
+        <TextView
+            android:id="@+id/productDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Details:Pipes are Quality made and lifetime useable..."
+            android:paddingTop="8dp"
+            android:textColor="@color/black" />
+
+        <!-- Add to Cart and Buy Now Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="16dp">
+
+            <Button
+                android:id="@+id/addToCartButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Add to Cart" />
+
+
+        </LinearLayout>
+
+        <!-- Delivery Info -->
+        <TextView
+            android:id="@+id/deliveryInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery in 1 within Hour"
+            android:paddingTop="8dp"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+</ScrollView>
