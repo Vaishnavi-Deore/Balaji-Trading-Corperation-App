@@ -78,21 +78,12 @@
         android:gravity="center">
 
         <ImageView
-            android:layout_width="40dp"
+            android:layout_width="62dp"
             android:layout_height="40dp"
-            android:src="@drawable/google"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/google" />
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/facebook"
-            android:layout_marginEnd="16dp"/>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/apple"/>
     </LinearLayout>
 
     <!-- Already have an account? Login -->

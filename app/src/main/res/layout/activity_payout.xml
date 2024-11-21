@@ -53,11 +53,11 @@
             app:layout_constraintTop_toBottomOf="@+id/textView21">
 
             <TextView
-                android:layout_width="70dp"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="sans-serif-condensed-medium"
                 android:background="#03A9F4"
+                android:fontFamily="sans-serif-condensed-medium"
                 android:paddingLeft="8dp"
                 android:text="Name" />
 
@@ -66,9 +66,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
 
+                android:background="#03A9F4"
                 android:ems="10"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:background="#03A9F4"
                 android:inputType="text"
                 android:text="Name" />
         </LinearLayout>

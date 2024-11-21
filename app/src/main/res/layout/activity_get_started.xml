@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg" />
+        android:src="@drawable/bgi" />
 
     <!-- Overlay to darken the image slightly -->
     <View
@@ -31,7 +31,7 @@
             android:id="@+id/tvIntroText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You want Authentic, here you go!"
+            android:text=" You want Authentic , here you go!"
             android:textSize="24sp"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -43,7 +43,7 @@
             android:id="@+id/tvSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find Your Best Building Product Here"
+            android:text=" Find Your Best Building Product Here"
             android:textSize="16sp"
             android:textColor="#FFFFFF"
             android:gravity="center"

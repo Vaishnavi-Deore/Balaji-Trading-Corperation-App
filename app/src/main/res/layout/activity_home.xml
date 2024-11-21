@@ -189,30 +189,7 @@
                     android:paddingTop="8dp" />
             </LinearLayout>
 
-            <!-- tiles -->
-            <LinearLayout
-                android:id="@+id/tiles"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="83dp"
-                    android:layout_height="74dp"
-                    android:src="@drawable/tiles" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tiles"
-                    android:textColor="@android:color/black"
-                    android:gravity="center"
-                    android:textSize="14sp"
-                    android:paddingTop="8dp" />
-            </LinearLayout>
             <!-- brushes -->
             <LinearLayout
                 android:id="@+id/brushes"
