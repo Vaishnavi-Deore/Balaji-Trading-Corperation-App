@@ -1,26 +1,74 @@
 {
   "project_info": {
-    "project_number": "919453229155",
-    "project_id": "balaji-trading-corperation",
-    "storage_bucket": "balaji-trading-corperation.firebasestorage.app"
+    "project_number": "643997160930",
+    "firebase_url": "https://balajitrading-b8211-default-rtdb.firebaseio.com",
+    "project_id": "balajitrading-b8211",
+    "storage_bucket": "balajitrading-b8211.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:919453229155:android:fad2b1fdf9501e0c899856",
+        "mobilesdk_app_id": "1:643997160930:android:d3766891b72be3346055bb",
         "android_client_info": {
-          "package_name": "com.example.balajitradingcoorperation"
+          "package_name": "com.example.AdminBalajiTrading"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "643997160930-q4imr6jffafbbt4ch31kj75hn5uedo0b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.AdminBalajiTrading",
+            "certificate_hash": "21cf35eccd4a435cd6723a9aafa86f0522138f86"
+          }
+        },
+        {
+          "client_id": "643997160930-2ml0mno2bbnhp4mscpqe48j7hqr5kbq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAgYgY-OIYMCvQcgydsemta2x4ur68suZ8"
+          "current_key": "AIzaSyAUaFXfM87arfMHm9QHS--PbVYvzBEibsE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643997160930-2ml0mno2bbnhp4mscpqe48j7hqr5kbq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643997160930:android:e31868c4b935ee1a6055bb",
+        "android_client_info": {
+          "package_name": "com.example.balajitradingcoorperation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643997160930-2ml0mno2bbnhp4mscpqe48j7hqr5kbq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUaFXfM87arfMHm9QHS--PbVYvzBEibsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643997160930-2ml0mno2bbnhp4mscpqe48j7hqr5kbq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

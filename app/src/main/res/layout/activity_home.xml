@@ -10,201 +10,233 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Header with logo, notification, and profile photo -->
-        <RelativeLayout
+        <!-- Title Section -->
+        <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="8dp">
+            android:text="Balaji Trading Corporation"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:padding="16dp" />
 
-            <!-- Notification Icon on the left -->
-            <ImageView
-                android:id="@+id/notificationIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/notify"
-                android:layout_alignParentStart="true" />
-
-            <!-- Logo in the center -->
-            <ImageView
-                android:id="@+id/logoImage"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:src="@drawable/logo"
-                android:layout_centerHorizontal="true" />
-
-            <!-- Profile Photo on the right, with circular shape -->
-            <ImageView
-                android:id="@+id/profilePhoto"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/profile"
-                android:layout_alignParentEnd="true"
-                android:scaleType="centerCrop"
-                android:background="@drawable/circle_shape"
-                android:clickable="true"
-                android:focusable="true" />
-
-        </RelativeLayout>
-
-        <!-- Section for stories (horizontal scroll) -->
-        <HorizontalScrollView
+        <!-- Add a divider -->
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <!-- Sample Story Circle -->
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/circle_bg"
-                    android:src="@drawable/cement" />
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/circle_bg"
-                    android:src="@drawable/pipes" />
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/paint"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/circle_bg" />
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/tanks"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/circle_bg" />
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/pipes"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/circle_bg" />
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <!-- Banner Image -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/banner"
-            android:scaleType="centerCrop"
+            android:layout_height="2dp"
+            android:background="@color/gray"
             android:layout_marginBottom="16dp" />
 
-        <!-- Promotions section -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hot Sale"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingBottom="8dp" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/tanks"
-            android:scaleType="centerCrop"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Recommended items -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recommended for You"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingBottom="8dp" />
-
-        <!-- Item listing, repeat this layout for more items -->
-        <LinearLayout
+        <!-- Grid Layout for Menu Items -->
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:columnCount="2"
+            android:rowCount="3"
+            android:padding="8dp"
+            android:gap="8dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/cement"
-                android:layout_marginEnd="8dp"
-                android:scaleType="centerCrop" />
-
+            <!-- tank -->
             <LinearLayout
+                android:id="@+id/tank"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="83dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/water_tank" />
+
+                <TextView
+                    android:layout_width="59dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:text="Tanks"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Cement-->
+            <LinearLayout
+                android:id="@+id/cement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="83dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/cement1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cement"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:paddingTop="8dp" />
+            </LinearLayout>
+
+            <!-- paints -->
+            <LinearLayout
+                android:id="@+id/paints"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="83dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/paints1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quality of Cements is Amazing 1000rs"
-                    android:textSize="14sp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Shop Now"
-                    android:backgroundTint="#03A9F4"
-                    android:textColor="#FFFFFF" />
+                    android:text="Paints"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:paddingTop="8dp" />
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/pipes"
-                android:layout_marginEnd="8dp"
-                android:scaleType="centerCrop" />
-
+            <!-- pipes -->
             <LinearLayout
+                android:id="@+id/pipes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="83dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/pipes" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pipes"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:paddingTop="8dp" />
+            </LinearLayout>
+
+            <!-- tap-->
+            <LinearLayout
+                android:id="@+id/tap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="83dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/tap" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quality of pipes are Amazing 2000rs"
-                    android:textSize="14sp" />
+                    android:text="Tap"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:paddingTop="8dp" />
+            </LinearLayout>
+            <!-- basins-->
+            <LinearLayout
+                android:id="@+id/basin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
 
-                <Button
+                <ImageView
+                    android:layout_width="83dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/basins" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Shop Now"
-                    android:backgroundTint="#03A9F4"
-                    android:textColor="#FFFFFF" />
+                    android:text="Brushes"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:paddingTop="8dp" />
             </LinearLayout>
 
-        </LinearLayout>
+            <!-- tiles -->
+            <LinearLayout
+                android:id="@+id/tiles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="83dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/tiles" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tiles"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:paddingTop="8dp" />
+            </LinearLayout>
+            <!-- brushes -->
+            <LinearLayout
+                android:id="@+id/brushes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="83dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/brushes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brushes"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:paddingTop="8dp" />
+            </LinearLayout>
+        </GridLayout>
     </LinearLayout>
 </ScrollView>
