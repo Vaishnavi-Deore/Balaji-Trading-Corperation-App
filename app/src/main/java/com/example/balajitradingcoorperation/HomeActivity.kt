@@ -48,12 +48,6 @@ class HomeActivity : AppCompatActivity() {
             Toast.makeText(this, "Basins section clicked", Toast.LENGTH_SHORT).show()
         }
 
-        // Click listener for Tiles
-        val tiles = findViewById<LinearLayout>(R.id.tiles)
-        tiles.setOnClickListener {
-            Toast.makeText(this, "Tiles section clicked", Toast.LENGTH_SHORT).show()
-        }
-
         // Click listener for Brushes
         val brushes = findViewById<LinearLayout>(R.id.brushes)
         brushes.setOnClickListener {
