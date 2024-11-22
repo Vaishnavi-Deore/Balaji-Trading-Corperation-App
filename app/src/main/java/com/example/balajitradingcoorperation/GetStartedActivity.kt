@@ -1,34 +1,37 @@
 package com.example.balajitradingcoorperation
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class GetStartedActivity : AppCompatActivity() {
 
-    // Declare the Get Started button view
-    private lateinit var btnGetStarted: Button
+    private lateinit var btnLogout: Button
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Set the layout for this activity
         setContentView(R.layout.activity_get_started)
 
-        // Initialize the Get Started button
-        btnGetStarted = findViewById(R.id.btnGetStarted)
+        // Initialize logout button
+        btnLogout = findViewById(R.id.btnLogout)
 
-        // Set an OnClickListener to handle button clicks
-        btnGetStarted.setOnClickListener {
-            // Create an Intent to navigate to HomepageActivity
-            val intent = Intent(this, HomeActivity::class.java)
+        btnLogout.setOnClickListener {
+            // Clear shared preferences login state
+            val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+            sharedPreferences.edit().putBoolean("isLoggedIn", false).apply()
 
-            // Start the HomepageActivity
+            // Sign out from Firebase Auth
+            FirebaseAuth.getInstance().signOut()
+
+            // Navigate back to LoginActivity
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-
-            // Finish the current activity to remove it from the back stack
-            finish()
+            finish() // Close GetStartedActivity
         }
     }
 }
