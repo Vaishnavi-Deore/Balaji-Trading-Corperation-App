@@ -1,5 +1,6 @@
 package com.example.balajitradingcoorperation
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -17,11 +18,21 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var tvForgotPassword: TextView
     private lateinit var tvSignUp: TextView
 
-    // Initialize FirebaseAuth instance
-    private lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth // Firebase Auth instance
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Check login status using shared preferences
+        val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+
+        if (isLoggedIn) {
+            // If user is already logged in, navigate to main screen
+            navigateToMainScreen()
+            return // Exit onCreate
+        }
+
         setContentView(R.layout.activity_login)
 
         // Initialize views
@@ -34,40 +45,52 @@ class LoginActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        // Login button functionality
+        // Login button click listener
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                // Sign in user with Firebase Authentication
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            // If sign-in succeeds, navigate to GetStartedActivity
+                            // Save login state in shared preferences
+                            sharedPreferences.edit().putBoolean("isLoggedIn", true).apply()
+
+                            // Navigate to main screen
                             Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, GetStartedActivity::class.java)
-                            startActivity(intent)
-                            finish() // Close LoginActivity
+                            navigateToMainScreen()
                         } else {
-                            // If sign-in fails, display a message to the user.
-                            Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                            // Show login error
+                            Toast.makeText(
+                                this,
+                                "Login failed: ${task.exception?.message}",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     }
             } else {
+                // Show empty field error
                 Toast.makeText(this, "Please fill in both email and password", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Forgot password functionality (optional)
+        // Forgot password click listener (optional)
         tvForgotPassword.setOnClickListener {
-            // Redirect to ForgotPasswordActivity (implement this if needed)
+            // Navigate to ForgotPasswordActivity (implement if needed)
         }
 
-        // Sign up functionality
+        // Sign up click listener
         tvSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    // Function to navigate to the main screen
+    private fun navigateToMainScreen() {
+        val intent = Intent(this, GetStartedActivity::class.java)
+        startActivity(intent)
+        finish() // Close LoginActivity
     }
 }
